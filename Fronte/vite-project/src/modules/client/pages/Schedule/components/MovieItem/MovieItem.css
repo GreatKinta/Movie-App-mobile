@@ -1,0 +1,83 @@
+.movie-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px; /* Own card feeling */
+    background: #FFFFFF;
+    border-radius: 24px; /* Soft premium corners */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    width: 100%;
+    margin: 0 auto 32px auto; /* Separate items */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.movie-item-container:last-child {
+    margin-bottom: 0;
+}
+
+.movie-item-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08); /* Hover float */
+}
+
+@media (min-width: 768px) {
+    .movie-item-container {
+        flex-direction: row;
+        align-items: stretch; /* Match height */
+        justify-content: flex-start;
+        gap: 48px; /* More breathing room */
+    }
+}
+
+/* Container for MovieCard on the left */
+.movie-card-wrapper {
+    width: 300px; /* Slightly narrower to fit padding */
+    max-width: 100%; 
+    flex-shrink: 0;
+}
+
+.movie-card-wrapper .movie-card {
+    margin-bottom: 0; /* Override generic margin */
+}
+
+/* Info Details Styles */
+.movie-item-right {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px; 
+    border-left: 1px solid #F3F4F6; /* Subtle separator */
+    padding-left: 48px; /* Offset from border */
+}
+
+@media (max-width: 768px) {
+    .movie-item-right {
+        border-left: none;
+        border-top: 1px solid #F3F4F6;
+        padding-left: 0;
+        padding-top: 32px;
+    }
+}
+
+/* Showtimes section */
+.showtimes-type {
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #111827;
+    margin: 0 0 24px 0;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Decorative dot */
+.showtimes-type::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #D11515;
+    border-radius: 50%;
+}

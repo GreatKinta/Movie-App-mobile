@@ -1,0 +1,60 @@
+.date-selector-container {
+    width: 100%;
+    margin-bottom: 32px;
+    border-bottom: 2px solid #E5E7EB; /* Neutral gray */
+    overflow-x: auto;
+    /* Hide scrollbar for cleaner UI */
+    scrollbar-width: none; 
+}
+.date-selector-container::-webkit-scrollbar {
+    display: none;
+}
+
+.date-selector-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px; /* 8-point grid */
+}
+
+.date-selector-item {
+    margin-bottom: -2px; /* Pull down to overlap border */
+}
+
+.date-selector-btn {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6B7280; /* Neutral text */
+    transition: all 0.2s ease-out; /* Ease-out for entering states */
+}
+
+.date-selector-btn:hover {
+    color: #111827;
+}
+
+.date-selector-item.active .date-selector-btn {
+    color: #D11515; /* Brand red for cinema */
+    border-bottom-color: #D11515;
+}
+
+.day-number {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.month-year {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}

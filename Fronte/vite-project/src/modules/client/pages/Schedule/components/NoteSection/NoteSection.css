@@ -1,0 +1,46 @@
+.note-section-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    border: 1px solid #E5E7EB;
+    flex-wrap: wrap; /* Important for responsiveness */
+}
+
+.note-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.note-color-box {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.note-normal {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+}
+
+.note-booked {
+    background-color: #9CA3AF;
+    border: 1px solid #6B7280;
+}
+
+.note-vip {
+    background-color: #FCD34D; /* Gold-is color for VIP */
+    border: 1px solid #F59E0B;
+}
+
+.note-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4B5563;
+}

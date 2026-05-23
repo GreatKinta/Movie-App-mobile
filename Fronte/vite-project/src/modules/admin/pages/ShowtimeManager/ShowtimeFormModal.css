@@ -1,0 +1,111 @@
+/* ShowtimeFormModal.css & ShowtimeManager.css shared */
+
+/* ─── ShowtimeFormModal ─── */
+.sfm-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1001;
+    animation: fadeIn 0.2s ease;
+    padding: 20px;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.sfm-modal {
+    background: #161b22;
+    border: 1px solid rgba(48,54,61,0.9);
+    border-radius: 18px;
+    width: 100%; max-width: 560px;
+    max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+    animation: scaleIn 0.2s ease;
+}
+@keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+.sfm-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; border-bottom: 1px solid rgba(48,54,61,0.8);
+}
+.sfm-header-left { display: flex; align-items: center; gap: 10px; }
+.sfm-icon { color: #58a6ff; }
+.sfm-header h2 { font-size: 16px; font-weight: 700; color: #e6edf3; margin: 0; }
+.sfm-close {
+    background: none; border: none; color: #8b949e;
+    cursor: pointer; padding: 6px; border-radius: 8px; display: flex;
+    transition: all 0.15s;
+}
+.sfm-close:hover { background: rgba(48,54,61,0.6); color: #e6edf3; }
+
+.sfm-form { padding: 20px 24px; }
+.sfm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.sfm-field { display: flex; flex-direction: column; gap: 6px; }
+.sfm-col-2 { grid-column: 1 / -1; }
+.sfm-field label { font-size: 12px; font-weight: 600; color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em; }
+.sfm-req { color: #f85149; }
+.sfm-field input, .sfm-field select {
+    padding: 10px 12px;
+    background: rgba(13,17,23,0.8);
+    border: 1px solid rgba(48,54,61,0.9);
+    border-radius: 10px; color: #e6edf3; font-size: 14px; outline: none;
+    transition: border-color 0.2s; font-family: inherit;
+}
+.sfm-field input:focus, .sfm-field select:focus { border-color: #388bfd; }
+.sfm-field input.err, .sfm-field select.err { border-color: #f85149; }
+.sfm-err { font-size: 12px; color: #f85149; }
+
+.sfm-footer {
+    display: flex; justify-content: flex-end; gap: 12px;
+    margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(48,54,61,0.6);
+}
+.sfm-btn-ghost {
+    padding: 10px 20px; border: 1px solid rgba(48,54,61,0.8); background: transparent;
+    color: #8b949e; border-radius: 10px; font-size: 14px; cursor: pointer; transition: all 0.15s;
+}
+.sfm-btn-ghost:hover { color: #e6edf3; border-color: #8b949e; }
+.sfm-btn-save {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #1f6feb, #388bfd);
+    color: #fff; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(31,111,235,0.35);
+}
+.sfm-btn-save:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(31,111,235,0.5); }
+.sfm-btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* =========================================
+   LIGHT MODE OVERRIDES
+   ========================================= */
+.admin-container:not(.dark-theme) .sfm-modal {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+}
+.admin-container:not(.dark-theme) .sfm-header {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+.admin-container:not(.dark-theme) .sfm-header h2 { color: #1e293b; }
+
+.admin-container:not(.dark-theme) .sfm-field label { color: #64748b; }
+.admin-container:not(.dark-theme) .sfm-field input,
+.admin-container:not(.dark-theme) .sfm-field select {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    color: #334155;
+}
+.admin-container:not(.dark-theme) .sfm-field input::placeholder { color: #94a3b8; }
+
+.admin-container:not(.dark-theme) .sfm-footer { border-color: #e2e8f0; }
+
+.admin-container:not(.dark-theme) .sfm-btn-ghost {
+    border-color: #cbd5e1;
+    color: #64748b;
+}
+.admin-container:not(.dark-theme) .sfm-btn-ghost:hover {
+    border-color: #94a3b8;
+    color: #1e293b;
+}

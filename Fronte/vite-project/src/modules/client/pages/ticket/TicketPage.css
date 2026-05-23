@@ -1,0 +1,350 @@
+/* === Trang vé điện tử === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap');
+
+.ticket-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #1a1a3e, #24243e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* === Nút hành động === */
+.ticket-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 680px;
+    justify-content: space-between;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border: none;
+}
+
+.home-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    backdrop-filter: blur(8px);
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.print-btn {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: #1a1a2e;
+}
+
+.print-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* === Wrapper vé === */
+.ticket-wrapper {
+    width: 100%;
+    max-width: 680px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Header vé === */
+.ticket-header {
+    background: linear-gradient(135deg, #e50914, #b81c24);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.ticket-success-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    backdrop-filter: blur(6px);
+}
+
+.check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #4caf50;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* === Body vé === */
+.ticket-body {
+    padding: 32px;
+}
+
+/* Phim */
+.ticket-movie-section {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.ticket-poster {
+    width: 90px;
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.ticket-movie-info {
+    flex: 1;
+}
+
+.ticket-movie-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 6px;
+    line-height: 1.3;
+}
+
+.ticket-original-title {
+    font-size: 13px;
+    color: #888;
+    margin: 0 0 14px;
+    font-style: italic;
+}
+
+.ticket-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ticket-tag {
+    background: #f0f0f0;
+    color: #444;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.tag-type {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+/* === Đường cắt vé === */
+.ticket-divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 28px 0;
+}
+
+.ticket-notch {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #0f0c29, #1a1a3e);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    margin: 0 -14px;
+}
+
+.ticket-dashes {
+    flex: 1;
+    border-top: 2px dashed #ddd;
+    margin: 0 4px;
+}
+
+/* === Grid thông tin === */
+.ticket-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 32px;
+}
+
+.ticket-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.detail-value.seats {
+    color: #e50914;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* === Footer vé === */
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.ticket-order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ticket-order-code {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.ticket-total {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #e50914;
+}
+
+/* === QR dưới vé === */
+.ticket-qr-bottom {
+    background: #f9f9f9;
+    border-top: 1px solid #f0f0f0;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticket-barcode {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 4px;
+    background: #fff;
+}
+
+.ticket-scan-hint {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+/* === Media === */
+@media (max-width: 600px) {
+    .ticket-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-movie-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ticket-tags {
+        justify-content: center;
+    }
+
+    .ticket-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .ticket-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* === CSS khi in === */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .ticket-page {
+        background: #fff;
+        padding: 0;
+    }
+
+    .ticket-wrapper {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+    }
+
+    .ticket-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

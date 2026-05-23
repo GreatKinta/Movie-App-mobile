@@ -1,0 +1,277 @@
+/* AdminLayout.css */
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f8f9fc; /* Môi trường màu nền nhạt giống ảnh */
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 260px;
+    background-color: #465b8a; /* Màu xanh sidebar giống trong ảnh */
+    color: white;
+    height: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.admin-sidebar.closed {
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar-logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-logo h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.sidebar-menu-title {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 20px 20px 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 2px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 24px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link.active {
+    color: white;
+    font-weight: 500;
+}
+
+.nav-link span {
+    margin-left: 14px;
+    flex: 1;
+}
+
+.chevron {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Submenu layout */
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-item-dropdown.open .submenu {
+    max-height: 200px;
+}
+
+.sub-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 12px 60px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.sub-nav-link:hover {
+    color: white;
+}
+
+.sub-nav-link.active {
+    color: white;
+    font-weight: 500;
+}
+
+/* Main content */
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.admin-header {
+    height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Bóng mờ như thiết kế */
+    z-index: 50;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-menu-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #64748b;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #64748b;
+}
+
+.icon-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 16px;
+    border-left: 1px solid #e2e8f0;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.2;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Page content area */
+.admin-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+/* =========================================
+   DARK MODE STYLES
+   ========================================= */
+.admin-container.dark-theme {
+    background-color: #0d1117;
+    color: #e6edf3;
+}
+
+.dark-theme .admin-sidebar {
+    background-color: #161b22;
+    border-right: 1px solid rgba(48, 54, 61, 0.8);
+}
+
+.dark-theme .submenu {
+    background-color: #0d1117;
+}
+
+.dark-theme .admin-header {
+    background-color: #161b22;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.8);
+}
+
+.dark-theme .toggle-menu-btn,
+.dark-theme .icon-btn {
+    color: #8b949e;
+}
+
+.dark-theme .toggle-menu-btn:hover,
+.dark-theme .icon-btn:hover {
+    color: #e6edf3;
+}
+
+.dark-theme .user-profile {
+    border-left-color: rgba(48, 54, 61, 0.8);
+}
+
+.dark-theme .user-name {
+    color: #e6edf3;
+}
+
+.dark-theme .user-role {
+    color: #8b949e;
+}
+
+.dark-theme .user-avatar {
+    background-color: #21262d;
+}

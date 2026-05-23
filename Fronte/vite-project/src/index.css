@@ -1,0 +1,40 @@
+/* 1. Reset margin, padding và thiết lập box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Giúp padding không làm tăng kích thước thật của phần tử */
+}
+
+/* 2. Loại bỏ khoảng trắng ở body và đảm bảo chiều cao */
+html, body {
+  height: 100%;
+  width: 100%;
+  /* Ngăn chặn thanh cuộn ngang xuất hiện vô lý */
+  overflow-x: hidden; 
+}
+
+/* 3. Reset cho danh sách (ul, ol) - Rất quan trọng cho phần Core Concepts của bạn */
+ul, ol {
+  list-style: none; /* Loại bỏ dấu chấm tròn mặc định */
+}
+
+/* 4. Reset cho thẻ liên kết */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. Đảm bảo ảnh không bị tràn và hiển thị mượt mà */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 6. Reset mặc định cho Button (giúp các nút TabButton của bạn dễ tùy chỉnh hơn) */
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}

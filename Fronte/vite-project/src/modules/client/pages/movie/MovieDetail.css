@@ -1,0 +1,157 @@
+/* Container chung */
+.movie-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa cột trái và phải */
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* --- CỘT TRÁI (Nội dung chính) --- */
+.main-content {
+    flex: 3; /* Chiếm 3 phần (75%) */
+}
+
+/* Phần Banner & Info */
+.movie-intro {
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Làm tối ảnh nền để chữ nổi hơn */
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Restored exact centering */
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Phần thông tin chi tiết (Poster + Text) */
+.movie-info-section {
+    display: flex;
+    gap: 30px;
+    padding: 0; /* Nội dung này thường đè lên hoặc nằm dưới banner, ở đây mình làm nằm dưới cho đơn giản trước */
+    margin-top: -100px; /* Kỹ thuật kéo poster đè lên banner */
+    position: relative;
+    z-index: 10;
+    padding-left: 20px;
+}
+
+.poster-box img {
+    width: 240px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 3px solid #fff;
+}
+
+.info-box {
+    padding-top: 110px; /* Đẩy text xuống vì Poster bị kéo lên */
+}
+
+.movie-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #034EA2; /* Xanh Beta */
+}
+
+.rating-tag {
+    background-color: #FF6600;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.meta-info p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.meta-label {
+    font-weight: bold;
+    color: #555;
+    width: 100px;
+    display: inline-block;
+}
+
+/* Phần nội dung phim */
+.movie-plot {
+    margin-top: 30px;
+    border-left: 4px solid #034EA2;
+    padding-left: 15px;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #034EA2;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- CỘT PHẢI (Sidebar) --- */
+.sidebar {
+    flex: 1; /* Chiếm 1 phần (25%) */
+}
+
+.sidebar h3 {
+    color: #034EA2;
+    border-left: 4px solid #034EA2;
+    padding-left: 10px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .movie-detail-container {
+        flex-direction: column;
+    }
+    .movie-info-section {
+        flex-direction: column;
+        margin-top: -50px;
+        align-items: center;
+        text-align: center;
+    }
+    .info-box {
+        padding-top: 20px;
+    }
+}
+
+/* Lịch chiếu Detail Styles */
+.showtimes-container {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #E5E7EB;
+}

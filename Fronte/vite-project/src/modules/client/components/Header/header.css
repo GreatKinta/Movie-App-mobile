@@ -1,0 +1,237 @@
+/* Global Reset for Header */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+/* Layout Utilities */
+.header-wrapper {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #034EA2;
+    /* Adjust to match the exact blue if needed */
+    color: white;
+    font-size: 13px;
+    padding: 5px 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: flex-end;
+    /* Align to the right */
+    align-items: center;
+}
+
+.auth-links a {
+    color: white;
+    font-weight: bold;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.auth-links .divider {
+    margin: 0 10px;
+    opacity: 0.7;
+}
+
+/* Main Header Styling */
+.main-header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.logo-highlight {
+    color: #034EA2;
+    /* Matching the top bar blue */
+}
+
+/* Navigation Styling */
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+    padding-right: 300px;
+
+}
+
+.main-nav a {
+    color: #333;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.main-nav a:hover {
+    color: #034EA2;
+}
+
+.tab-btn {
+    color: #333;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    /* Đè lên border-bottom của cha */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF6600;
+    /* Màu cam nổi bật */
+}
+
+.logo {
+    margin-right: auto;
+}
+
+/* ── User Menu (đã đăng nhập) ── */
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+
+.user-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    background-color: #FF6600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.user-name {
+    font-weight: bold;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chevron {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* ── Dropdown ── */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    z-index: 9999;
+    overflow: hidden;
+    animation: fadeDown 0.15s ease;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+    font-family: inherit;
+}
+
+.dropdown-item:hover {
+    background: #f0f5ff;
+    color: #034EA2;
+}
+
+.dropdown-logout {
+    color: #e74c3c;
+    border-top: 1px solid #eee;
+}
+
+.dropdown-logout:hover {
+    background: #fff5f5;
+    color: #c0392b;
+}

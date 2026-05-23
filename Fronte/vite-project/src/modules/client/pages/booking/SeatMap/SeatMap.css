@@ -1,0 +1,142 @@
+.seat-map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Legend Styling - Moved to top as per design intent or handled flexible */
+.seat-legend-top {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.legend-item .seat-item {
+    width: 25px;
+    height: 25px;
+    cursor: default;
+    border-radius: 5px;
+    /* Rounded shapes */
+}
+
+/* Screen Styling */
+.screen-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.screen-display {
+    width: 80%;
+    height: 60px;
+    background: linear-gradient(to bottom, #cfd8dc, #eceff1);
+    /* Curved effect */
+    border-top: 4px solid #b0bec5;
+    border-radius: 50% 50% 0 0 / 20px 20px 0 0;
+    box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #90a4ae;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* Seat Grid Styling */
+.seats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.row-label {
+    width: 25px;
+    font-weight: bold;
+    color: #90a4ae;
+    text-align: center;
+}
+
+.row-seats {
+    display: flex;
+    gap: 8px;
+}
+
+/* Seat Item Styling */
+.seat-item {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px 8px 12px 12px;
+    /* Slight armchair shape */
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    /* Default shadow for depth */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.seat-item:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Colors based on Beta Cinemas */
+/* Available: Grey/White */
+.seat-item.available {
+    background-color: #e0e0e0;
+    /* Light grey */
+    color: #757575;
+}
+
+/* Selected: Blue */
+.seat-item.selected {
+    background-color: #03a9f4;
+    /* Bright Blue */
+    color: white;
+}
+
+/* Booked: Red */
+.seat-item.booked {
+    background-color: #ef5350;
+    /* Red */
+    color: white;
+    cursor: not-allowed;
+    opacity: 1;
+    /* Keep vivid red */
+}
+
+/* Holding: Orange/Yellow */
+.seat-item.holding {
+    background-color: #ffb300;
+    /* Amber/Orange */
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.9;
+}

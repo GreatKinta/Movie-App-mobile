@@ -1,0 +1,145 @@
+/* ShowtimeManager.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.sm-page {
+    font-family: 'Inter', sans-serif;
+    background: #0d1117; min-height: 100vh;
+    color: #e6edf3; padding: 28px 32px; position: relative;
+}
+
+/* ── Toast ── */
+.sm-toast {
+    position: fixed; top: 24px; right: 28px; z-index: 9999;
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px; border-radius: 12px; font-size: 14px; font-weight: 500;
+    backdrop-filter: blur(16px); animation: toastIn 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+@keyframes toastIn { from { transform: translateX(40px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+.sm-toast--success { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; }
+.sm-toast--error   { background: rgba(239,68,68,0.15);  border: 1px solid rgba(239,68,68,0.4);  color: #fca5a5; }
+
+/* ── Header ── */
+.sm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.sm-header-left { display: flex; align-items: center; gap: 14px; }
+.sm-header-icon { color: #58a6ff; }
+.sm-title   { font-size: 22px; font-weight: 700; color: #e6edf3; margin: 0; }
+.sm-subtitle { font-size: 13px; color: #8b949e; margin: 2px 0 0; }
+.sm-header-actions { display: flex; gap: 10px; }
+
+.sm-btn-primary {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px;
+    background: linear-gradient(135deg, #1f6feb, #388bfd);
+    color: #fff; border: none; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(31,111,235,0.35);
+}
+.sm-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(31,111,235,0.5); }
+
+.sm-btn-auto {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px;
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.3);
+    color: #fcd34d; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.sm-btn-auto:hover { background: rgba(245,158,11,0.18); transform: translateY(-1px); }
+
+/* ── Filters ── */
+.sm-filters {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+    background: rgba(22,27,34,0.85);
+    border: 1px solid rgba(48,54,61,0.8);
+    border-radius: 12px; padding: 12px 16px;
+    backdrop-filter: blur(10px);
+}
+.sm-filter-icon { color: #8b949e; flex-shrink: 0; }
+.sm-date-input {
+    padding: 8px 12px; background: rgba(13,17,23,0.8);
+    border: 1px solid rgba(48,54,61,0.8); border-radius: 8px;
+    color: #e6edf3; font-size: 14px; outline: none; transition: border-color 0.2s;
+}
+.sm-date-input:focus { border-color: #388bfd; }
+.sm-select {
+    padding: 8px 12px; background: rgba(13,17,23,0.8);
+    border: 1px solid rgba(48,54,61,0.8); border-radius: 8px;
+    color: #e6edf3; font-size: 14px; cursor: pointer; outline: none;
+}
+.sm-select:focus { border-color: #388bfd; }
+
+/* ── Loading ── */
+.sm-loading { text-align: center; padding: 60px; color: #8b949e; font-size: 14px; }
+
+/* ── Overlay / Confirm ── */
+.sm-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center;
+    z-index: 1000; animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.sm-confirm {
+    background: #161b22; border: 1px solid rgba(48,54,61,0.9);
+    border-radius: 16px; padding: 36px; max-width: 420px; width: 90%;
+    text-align: center; box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    animation: scaleIn 0.2s ease;
+}
+@keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.sm-confirm-icon { color: #f59e0b; margin-bottom: 16px; }
+.sm-confirm h3 { font-size: 18px; font-weight: 700; color: #e6edf3; margin: 0 0 12px; }
+.sm-confirm p  { font-size: 14px; color: #8b949e; line-height: 1.6; margin: 0 0 8px; }
+.sm-confirm p strong { color: #e6edf3; }
+.sm-confirm-warn { font-size: 12px; color: #fca5a5; }
+.sm-confirm-actions { display: flex; gap: 12px; justify-content: center; margin-top: 24px; }
+.sm-btn-ghost {
+    padding: 10px 22px; border: 1px solid rgba(48,54,61,0.8); background: transparent;
+    color: #8b949e; border-radius: 10px; font-size: 14px; cursor: pointer; transition: all 0.15s;
+}
+.sm-btn-ghost:hover { border-color: #8b949e; color: #e6edf3; }
+.sm-btn-danger {
+    padding: 10px 22px; border: none;
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: #fff; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.15s; box-shadow: 0 4px 14px rgba(239,68,68,0.3);
+}
+.sm-btn-danger:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(239,68,68,0.45); }
+
+/* =========================================
+   LIGHT MODE OVERRIDES
+   ========================================= */
+.admin-container:not(.dark-theme) .sm-page {
+    background: #f8f9fc;
+    color: #334155;
+}
+.admin-container:not(.dark-theme) .sm-title { color: #1e293b; }
+.admin-container:not(.dark-theme) .sm-subtitle { color: #64748b; }
+
+.admin-container:not(.dark-theme) .sm-filters {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+.admin-container:not(.dark-theme) .sm-date-input,
+.admin-container:not(.dark-theme) .sm-select {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    color: #334155;
+}
+.admin-container:not(.dark-theme) .sm-confirm {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+.admin-container:not(.dark-theme) .sm-confirm h3 { color: #1e293b; }
+.admin-container:not(.dark-theme) .sm-confirm p { color: #64748b; }
+.admin-container:not(.dark-theme) .sm-confirm p strong { color: #1e293b; }
+
+.admin-container:not(.dark-theme) .sm-btn-ghost {
+    border-color: #cbd5e1;
+    color: #64748b;
+}
+.admin-container:not(.dark-theme) .sm-btn-ghost:hover {
+    border-color: #94a3b8;
+    color: #1e293b;
+}
